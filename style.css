@@ -7,6 +7,21 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+
+.game {
+  flex: column;
+}
+
+.title {
+  color: #fff;
+  text-align: center;
+  font-size: 32px;
+}
+
+.subtitle {
+  color: #fff;
+}
+
 p {
   font-size: 20px;
 }
@@ -31,7 +46,7 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.cards, .card, .view, .details, p{
+.cards, .card, .view, .details, p {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -141,16 +156,19 @@ body {
 .details button {
   cursor: pointer;
   font-size: 14px;
-  color: #6563FF;
+  color: #fff;
   border-radius: 4px;
-  background: #fff;
-  border: 2px solid #6563FF;
+  background: #6563FF;
+  border: 2px solid #2f2da1;
   transition: 0.3s ease;
+  padding: 2px;
 }
 
 .details button:hover {
-  color: #fff;
-  background: #6563FF;
+  border-radius: 6px;
+  background-color: #fff !important;
+  border: 2px solid #6563FF;
+  color: #6563FF;
 }
 
 @media screen and (max-width: 700px) {

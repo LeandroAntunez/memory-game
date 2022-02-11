@@ -7,12 +7,20 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+p {
+  font-size: 20px;
+}
 
 body {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  background: #6563FF;
+}
+
+::selection {
+  color: #fff;
   background: #6563FF;
 }
 
@@ -23,23 +31,21 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.cards, .card, .view {
+.cards, .card, .view, .details, p{
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .cards {
-  height: 400px;
-  width: 400px;
+  height: 350px;
+  width: 350px;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
 .cards .card {
   cursor: pointer;
-  list-style: none;
-  user-select: none;
   position: relative;
   perspective: 1000px;
   transform-style: preserve-3d;
@@ -73,9 +79,10 @@ body {
   }
 }
 
-.card .view {
+.cards .card .view {
   width: 100%;
   height: 100%;
+  user-select: none;
   position: absolute;
   border-radius: 7px;
   background: #fff;
@@ -86,11 +93,11 @@ body {
 }
 
 .card .front-view img {
-  width: 19px;
+  width: 17px;
 }
 
 .card .back-view img {
-  max-width: 45px;
+  max-width: 40px;
 }
 
 .card .back-view {
@@ -103,6 +110,47 @@ body {
 
 .card.flip .front-view {
   transform: rotateY(180deg);
+}
+
+.details {
+  width: 100%;
+  margin-top: 15px;
+  padding: 0 20px;
+  border-radius: 7px;
+  background: #fff;
+  height: calc(100% / 4 - 30px);
+  justify-content: space-between;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.details p {
+  font-size: 18px;
+  height: 17px;
+  padding-right: 18px;
+  border-right: 1px solid #ccc;
+}
+
+.details p span {
+  margin-left: 8px;
+}
+
+.details p b {
+  font-weight: 500;
+}
+
+.details button {
+  cursor: pointer;
+  font-size: 14px;
+  color: #6563FF;
+  border-radius: 4px;
+  background: #fff;
+  border: 2px solid #6563FF;
+  transition: 0.3s ease;
+}
+
+.details button:hover {
+  color: #fff;
+  background: #6563FF;
 }
 
 @media screen and (max-width: 700px) {
@@ -126,11 +174,27 @@ body {
     width: 300px;
   }
 
-  .card .front-view img {
-    width: 15px;
-  }
-
   .card .back-view img {
     max-width: 35px;
+  }
+
+  .details {
+    margin-top: 10px;
+    padding: 0 15px;
+    height: calc(100% / 4 - 20px);
+  }
+
+  .details p {
+    height: 15px;
+    font-size: 17px;
+    padding-right: 13px;
+  }
+
+  .details button {
+    font-size: 13px;
+    padding: 5px 10px;
+    border: none;
+    color: #fff;
+    background: #6563FF;
   }
 }
